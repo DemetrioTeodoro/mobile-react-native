@@ -1,21 +1,32 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { AppLoading } from 'expo';
+import { StatusBar } from 'expo-status-bar';
+import {
+  Ubuntu_400Regular,
+  Ubuntu_500Medium,
+  Ubuntu_700Bold,
+  useFonts
+} from '@expo-google-fonts/ubuntu';
 
-export default function App() {
+import Products from './src/pages/Products';
+
+const App = () => {
+  const [font] = useFonts({
+    Ubuntu_400Regular,
+    Ubuntu_500Medium,
+    Ubuntu_700Bold
+  });
+
+  if (!font) {
+    return <AppLoading />
+  }
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <>
+      <StatusBar barStyle='dark-content' backgroundColor='transparent' translucent />
+      <Products />
+    </>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;
