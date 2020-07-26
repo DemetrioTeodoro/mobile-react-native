@@ -1,6 +1,6 @@
 import React from 'react';
 import { AppLoading } from 'expo';
-import { StatusBar } from 'expo-status-bar';
+import { StatusBar } from 'react-native';
 import {
   Ubuntu_400Regular,
   Ubuntu_500Medium,
@@ -8,9 +8,9 @@ import {
   useFonts
 } from '@expo-google-fonts/ubuntu';
 
-import Products from './src/pages/Products';
+import Routes from './src/routes';
 
-const App = () => {
+export default function App() {
   const [font] = useFonts({
     Ubuntu_400Regular,
     Ubuntu_500Medium,
@@ -24,9 +24,7 @@ const App = () => {
   return (
     <>
       <StatusBar barStyle='dark-content' backgroundColor='transparent' translucent />
-      <Products />
+      <Routes />
     </>
   );
 }
-
-export default App;
