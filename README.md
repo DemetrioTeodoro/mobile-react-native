@@ -1,2 +1,2 @@
 # mobile-react-native
-![Screenshot](previous/Login.jpeg)
+![Screenshot](preview/Login.jpeg)
