@@ -1,8 +1,9 @@
 import React from 'react';
 import { RectButton } from 'react-native-gesture-handler';
-import { Text, View, StyleSheet, ImageBackground } from 'react-native';
+import styles from './styles';
+import { Text, View, ImageBackground, TextInput } from 'react-native';
 
-const Products = () => {
+const Login = () => {
     return (
 
         <ImageBackground
@@ -26,6 +27,19 @@ const Products = () => {
                 <Text style={styles.container}>
                     Login
                 </Text>
+                <TextInput
+                    style={styles.input}
+                    placeholder='Digite seu usuario'
+                >
+
+                </TextInput>
+
+                <TextInput
+                    style={styles.input}
+                    placeholder='Digite sua senha'
+                >
+
+                </TextInput>
 
                 <RectButton style={styles.button}>
                     <Text style={styles.buttonText}>
@@ -37,34 +51,4 @@ const Products = () => {
     )
 }
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        padding: 32,
-    },
-    ellipse8: {
-        flex: 1,
-        marginLeft: 200,
-    },
-    entry: {
-        width: 300,
-        height: 400,
-        marginTop: 100,
-        borderRadius: 10,
-        backgroundColor: '#fff'
-    },
-    button: {
-        width: 200,
-        height: 40,
-        marginLeft: 50,
-        marginBottom: 10,
-        borderRadius: 10,
-        alignItems: 'center',
-        backgroundColor: '#69c983',
-    },
-    buttonText: {
-        marginTop: 9
-    }
-})
-
-export default Products;
+export default Login;
